@@ -54,6 +54,7 @@ const techItems: TechItem[] = [
 export default function VideoThree() {
   const [active, setActive] = useState<TechItem | null>(null);
   const [videoError, setVideoError] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
     <div className="tp-video-3-area">
@@ -80,18 +81,17 @@ export default function VideoThree() {
               const v = e.currentTarget;
               console.log('Video readyState:', v.readyState, 'dimensions:', v.videoWidth, 'x', v.videoHeight);
             }
+            setVideoLoaded(true);
           }}
+          onCanPlay={() => setVideoLoaded(true)}
         >
-          <source
-            src="https://www.digitallynext.com/home/dn-video.mp4"
-            type="video/mp4"
-          />
+          <source src="/video/dn-video.mp4" type="video/mp4" />
           <source
             src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
             type="video/mp4"
           />
         </video>
-        {videoError && (
+        {videoError && !videoLoaded && (
           <div style={{position:'absolute', inset:0, display:'flex', alignItems:'center', justifyContent:'center'}}>
             <div style={{background:'rgba(0,0,0,0.6)', color:'#fff', padding:'16px 20px', borderRadius:8, textAlign:'center'}}>
               <p style={{marginBottom:10}}>Unable to load embedded video due to remote restrictions.</p>
