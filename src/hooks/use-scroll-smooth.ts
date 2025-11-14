@@ -7,10 +7,7 @@ export default function useScrollSmooth() {
   const [isScrollSmooth] = useState<boolean>(true);
 
   useGSAP(() => {
-    Promise.all([
-      import("gsap/ScrollTrigger"),
-      import("gsap/ScrollSmoother"),
-    ]).then(([{ ScrollTrigger }, { ScrollSmoother }]) => {
+    import("@/plugins").then(({ ScrollTrigger, ScrollSmoother }) => {
       gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
       const smoothWrapper = document.getElementById("smooth-wrapper");
