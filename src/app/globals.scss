@@ -1,0 +1,137 @@
+@forward '../../public/assets/css/bootstrap.min.css'; 
+@forward '../../public/assets/scss/main.scss';
+
+/* Light/Dark variables for tech grid & modal */
+:root {
+  --dn-title: var(--tp-common-black);
+  --dn-track: rgba(6, 7, 40, 0.08);
+  --dn-bar: var(--tp-common-black);
+  --dn-icon-bg: rgba(6, 7, 40, 0.06);
+  --dn-icon-color: #1e1e1e;
+  --dn-modal-bg: #fff;
+  --dn-modal-title: #111;
+  --dn-modal-text: #333;
+  --dn-modal-muted: #555;
+  --dn-modal-border: rgba(6, 7, 40, 0.12);
+}
+
+/* Global font overrides */
+body { font-family: var(--tp-ff-body); }
+h1, h2, h3, h4, h5, h6,
+.tp-section-title-200,
+.tp-hero-title,
+.tp-project-title-sm { font-family: var(--tp-ff-heading); }
+
+[data-theme='dark'] {
+  --dn-title: var(--tp-common-white);
+  --dn-track: rgba(255, 255, 255, 0.12);
+  --dn-bar: var(--tp-common-white);
+  --dn-icon-bg: rgba(255, 255, 255, 0.08);
+  --dn-icon-color: #fff;
+  --dn-modal-bg: #111;
+  --dn-modal-title: #fff;
+  --dn-modal-text: #cfcfcf;
+  --dn-modal-muted: #aeaeae;
+  --dn-modal-border: rgba(255, 255, 255, 0.12);
+}
+
+
+// Video modal style 
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9); 
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-modal-container {
+  width: 90%;
+  max-width: 1200px; 
+  position: relative;
+}
+
+.video-modal-iframe {
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  color: white;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.video-modal-close:hover {
+  transform: scale(1.2);
+}
+
+/* Click outside to close */
+.video-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* Tech grid & modal styles for VideoThree */
+.dn-tech-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(25, 25, 26, 0.20);
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.dn-tech-card:hover { transform: translateY(-2px); border-color: rgba(25, 25, 26, 0.35); }
+.dn-tech-card-inner { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.dn-tech-logo img { width: 48px; height: 48px; object-fit: cover; border-radius: 8px; }
+.dn-tech-icon { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 12px; background: var(--dn-icon-bg); color: var(--dn-icon-color); }
+.dn-tech-title { color: var(--dn-title); font-size: 14px; font-weight: 600; text-align: center; }
+.dn-tech-progress { width: 100%; height: 6px; background: var(--dn-track); border-radius: 10px; overflow: hidden; }
+.dn-tech-progress-bar { height: 100%; background: var(--dn-bar); }
+
+@media (max-width: 576px) {
+  .dn-tech-logo img { width: 44px; height: 44px; }
+  .dn-tech-icon { width: 50px; height: 50px; }
+}
+
+/* Modal content */
+.dn-tech-modal { background: var(--dn-modal-bg); border-radius: 16px; padding: 24px; border: 1px solid var(--dn-modal-border); }
+.dn-tech-modal-header { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+.dn-tech-modal-logo img { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; }
+.dn-tech-modal .dn-tech-icon { width: 60px; height: 60px; }
+.dn-tech-modal-title { color: var(--dn-modal-title); font-size: 22px; font-weight: 700; margin: 0; }
+.dn-tech-modal-summary { color: var(--dn-modal-text); margin: 12px 0 8px; }
+.dn-tech-modal-list { color: var(--dn-modal-muted); margin: 0; padding-left: 18px; }
+.dn-tech-modal-list li { margin-bottom: 6px; }
+
+/* Inline details (replaces modal) */
+.dn-tech-details { background: var(--dn-modal-bg); border: 1px solid var(--dn-modal-border); border-radius: 12px; padding: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+.dn-tech-details-title { color: var(--dn-modal-title); font-size: 16px; }
+.dn-tech-details-summary { color: var(--dn-modal-text); margin-bottom: 8px; }
+.dn-tech-details-list { color: var(--dn-modal-muted); margin: 0; padding-left: 18px; }
+.dn-tech-details-list li { margin-bottom: 6px; }
+.dn-tech-details-close { background: transparent; border: 1px solid var(--dn-modal-border); border-radius: 8px; padding: 6px 10px; color: var(--dn-modal-title); }
+.dn-tech-details-close:hover { border-color: var(--dn-modal-title); }
+
+/* Radix Dialog popup */
+.dn-dialog-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 9998; }
+.dn-dialog-content { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 92%; max-width: 640px; z-index: 9999; }
+.dn-dialog-close { position: absolute; top: -44px; right: 0; background: none; border: none; font-size: 30px; color: var(--dn-modal-title); }
