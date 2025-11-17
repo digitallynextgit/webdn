@@ -51,7 +51,7 @@ export default function BrandSlider() {
       >
         {brand_images.map((b, i) => (
           <div key={i} className="tp-brand-item" >
-            <Image src={b} alt={`brand-${i}`} width={150} height={50} className="w-full h-full object-contain gap-5 " />
+            <Image src={b} alt={`brand-${i}`} width={320} height={120} className="w-full h-full object-contain gap-5 " />
           </div>
         ))}
       </Marquee>

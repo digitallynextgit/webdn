@@ -47,8 +47,8 @@ export default function AboutThree() {
           <div className="col-xl-6 col-lg-6 col-md-8">
             <div className="tp-about-3-content">
               <p className="mb-30 tp_fade_bottom">
-                We are a Delhi based Web studio focused on building Web Solutions as per the client&apos;s requirements.
-                Our work blends design, storytelling and technology to help beauty brands stand out and grow online.
+                We are a New Delhi based Web studio focused on building Web Solutions as per the client&apos;s requirements.
+                Our work blends design, storytelling and technology to help brands stand out and grow online.
               </p>
               <p className="mb-45 tp_fade_bottom">
                 Great ideas only matter when they create real impact. We shape concepts into thoughtful design and  experiences that connect with people,

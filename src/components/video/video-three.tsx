@@ -175,7 +175,7 @@ export default function VideoThree() {
                 </div>
                 <div className="dn-tech-modal-body">
                   <p className="dn-tech-modal-summary">{active.summary}</p>
-                  <h6 className="dn-tech-modal-subtitle">My Our</h6>
+                  {/* <h6 className="dn-tech-modal-subtitle">My Our</h6> */}
                   <ul className="dn-tech-modal-list">
                     {active.bullets.map((b, i) => (
                       <li key={i}>{b}</li>

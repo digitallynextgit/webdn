@@ -31,7 +31,7 @@ const HeroBannerOne = () => {
               <div className="tp-hero-title-box text-center p-relative">
                 <h1 className="tp-hero-title tp_fade_bottom">
                   <span className="p-relative">
-                    DigitallyNext
+                    Digitally Next
                     <span className="tp-hero-subtitle d-none d-lg-block ">
                       Hello <br /> People! We’re
                     </span>
@@ -70,8 +70,8 @@ const HeroBannerOne = () => {
             <div className="tp-hero-content tp_fade_bottom">
               <p>
                 <span></span>
-                DigitallyNext is a global digital design agency that partners with brands and businesses to craft exceptional digital Web experiences.
-                 We are a full-service design and development agency based in the New Delhi.
+                Digitally Next is a global digital design agency that partners with brands and businesses to craft exceptional digital Web experiences.
+                 We are a full-service design and development agency based in the New Delhi, India.
               </p>
             </div>
           </div>

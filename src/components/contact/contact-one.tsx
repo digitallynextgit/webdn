@@ -1,10 +1,13 @@
-import React from "react";
+
 import Image from "next/image";
 import { ProjectShape, RightArrow } from "../svg";
 import cta from '@/assets/img/home-03/cta/cta-1.png';
 import Link from "next/link";
+import React, { useState } from "react";
+import ContactModal from "../modal/contact-modal";
 
 export default function ContactOne() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="tp-cta-area black-bg pt-120 pb-120 z-index fix">
       <div className="container">
@@ -21,18 +24,19 @@ export default function ContactOne() {
             <div className="tp-cta-icon">
               <Image src={cta} alt="cta-img" />
             </div>
-            <div className="tp-cta-btn-box">
-              <Link className="tp-btn-zikzak p-relative" href="https://www.digitallynext.com/contact">
-                <span className="zikzak-content">
-                  Get <br /> In Touch
+            <div className="tp-cta-btn-box ">
+              <button className="tp-btn-zikzak p-relative " onClick={() => setShowModal(true)}>
+                <span className="zikzak-content mt-60">
+                  Get <br /> In Touch 
                   <RightArrow clr="#19191A" />
                 </span>
                 <ProjectShape />
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       </div>
+      <ContactModal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 }
