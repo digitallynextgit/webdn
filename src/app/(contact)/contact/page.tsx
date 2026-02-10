@@ -5,7 +5,6 @@ import ContactMain from "@/pages/contact/contact";
 export const metadata: Metadata = {
   title: "DigitallyNext - Contact page",
 };
-
 const ContactPage = () => {
   return (
     <ContactMain/>
